@@ -1,0 +1,28 @@
+Use forelse loop rather foreach
+You can use for forelse loop in your application.
+
+Instead of doing this 
+
+@if ($users->count())
+  @foreach ($users as $user)
+
+This is user {{ $user->id }}
+
+  @endforeach
+@else
+
+No users found.
+
+@endif
+
+You may use
+
+@forelse ($users as $user)
+
+This is user {{ $user->id }}
+
+@empty
+
+No users found.
+
+@endforelse
